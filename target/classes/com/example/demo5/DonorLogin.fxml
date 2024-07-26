@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo5.DonorLogin">
+    <left>
+        <AnchorPane prefHeight="582.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
+    </left>
+   <top>
+        <AnchorPane prefHeight="583.0" prefWidth="418.0" style="-fx-background-color: #D3D3D3;" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="usernameTextField" layoutX="399.0" layoutY="174.0" prefHeight="25.0" prefWidth="170.0" promptText="Username">
+                    <font>
+                        <Font size="13.0" />
+                    </font></TextField>
+                <Label layoutX="284.0" layoutY="178.0" text="Username">
+                    <font>
+                        <Font size="13.0" />
+                    </font></Label>
+                <Label layoutX="286.0" layoutY="252.0" text="Password">
+                    <font>
+                        <Font size="13.0" />
+                    </font></Label>
+                <PasswordField fx:id="passwordTextField" layoutX="398.0" layoutY="248.0" prefHeight="25.0" prefWidth="171.0" promptText="Password">
+                    <font>
+                        <Font size="13.0" />
+                    </font></PasswordField>
+                <Button fx:id="loginButton" layoutX="341.0" layoutY="380.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="25.0" prefWidth="219.0" style="-fx-background-color: #008080;" text="Login" textFill="WHITE">
+                    <font>
+                        <Font size="13.0" />
+                    </font></Button>
+                <Button fx:id="cancelButton" layoutX="341.0" layoutY="453.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="25.0" prefWidth="219.0" style="-fx-background-color: #008080;" text="Cancel" textFill="WHITE">
+                    <font>
+                        <Font size="13.0" />
+                    </font></Button>
+                <Label fx:id="loginMessageLabel" layoutX="180.0" layoutY="285.0" textFill="#943434">
+                    <font>
+                        <Font name="System Bold Italic" size="11.0" />
+                    </font>
+                </Label>
+                <Hyperlink fx:id="hyperLinkRegister" layoutX="504.0" layoutY="308.0" onAction="#hyperlinkClickOnAction" text="New User?" textFill="TEAL" />
+            <Button fx:id="LOGINBACK" layoutX="720.0" layoutY="39.0" mnemonicParsing="false" onAction="#LOGINBACKCLICKED" style="-fx-background-color: #008080; -fx-background-radius: 30;" text="&lt;--" textFill="WHITE" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.jpg" />
+               </image>
+            </ImageView>
+            </children>
+        </AnchorPane>
+   </top>
+</BorderPane>

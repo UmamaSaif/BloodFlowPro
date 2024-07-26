@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="582.0" prefWidth="971.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo5.RequestBloodTransfusionController">
+    <children>
+        <Label layoutX="434.0" layoutY="48.0" text="Transfusion">
+            <font>
+                <Font name="System Bold" size="36.0" />
+            </font>
+        </Label>
+        <TextField fx:id="donorNameField" layoutX="518.0" layoutY="206.0" prefHeight="25.0" prefWidth="204.0" promptText="Blood group">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="bloodTypeField" layoutX="518.0" layoutY="263.0" prefHeight="25.0" prefWidth="204.0" promptText="Quantity">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </TextField>
+        <Button fx:id="record" layoutX="439.0" layoutY="361.0" mnemonicParsing="false" onAction="#recordClicked" style="-fx-background-color: #008080;" text="Record Transfusion Data" textFill="WHITE">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Button>
+        <Label layoutX="242.0" layoutY="207.0" text="Blood Group">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="256.0" layoutY="264.0" text="Quantity">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="163.0" fitWidth="198.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@logo.jpg" />
+            </image>
+        </ImageView>
+      <Label fx:id="requestStatusLabel" layoutX="263.0" layoutY="314.0" />
+    </children>
+</AnchorPane>

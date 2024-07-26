@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo5.ManageInventory">
+   <children>
+      <AnchorPane layoutY="2.0" prefHeight="582.0" prefWidth="971.0">
+         <children>
+            <AnchorPane fx:id="bloodGroupPane" layoutX="458.0" layoutY="97.0" prefHeight="299.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="28.0" layoutY="44.0" text="A+" />
+                  <Label layoutX="30.0" layoutY="70.0" text="A-" />
+                  <Label layoutX="32.0" layoutY="97.0" text="B+" />
+                  <Label layoutX="30.0" layoutY="123.0" text="B-" />
+                  <Label layoutX="27.0" layoutY="147.0" text="AB+" />
+                  <Label layoutX="29.0" layoutY="173.0" text="AB-" />
+                  <Label layoutX="31.0" layoutY="199.0" text="O+" />
+                  <Label layoutX="34.0" layoutY="224.0" text="O-" />
+                  <TextField fx:id="A1textField" layoutX="81.0" layoutY="27.0" prefHeight="18.0" prefWidth="39.0" />
+                  <TextField fx:id="A2textField" layoutX="81.0" layoutY="53.0" prefHeight="18.0" prefWidth="39.0" />
+                  <TextField fx:id="B1textField" layoutX="81.0" layoutY="79.0" prefHeight="18.0" prefWidth="39.0" />
+                  <TextField fx:id="B2textField" layoutX="81.0" layoutY="106.0" prefHeight="18.0" prefWidth="39.0" />
+                  <TextField fx:id="AB1textField" layoutX="81.0" layoutY="132.0" prefHeight="18.0" prefWidth="39.0" />
+                  <TextField fx:id="AB2textField" layoutX="81.0" layoutY="156.0" prefHeight="18.0" prefWidth="39.0" />
+                  <TextField fx:id="O1textField" layoutX="81.0" layoutY="182.0" prefHeight="18.0" prefWidth="39.0" />
+                  <TextField fx:id="O2textField" layoutX="81.0" layoutY="211.0" prefHeight="18.0" prefWidth="39.0" />
+                  <Button fx:id="updateBloodInventory" layoutX="71.0" layoutY="261.0" mnemonicParsing="false" onAction="#onupdateBloodInventoryButtonClicked" text="Update" />
+               </children>
+            </AnchorPane>
+            <Label fx:id="sawalLabel" layoutX="749.0" layoutY="116.0" text="Update inventoy?" />
+            <TableView fx:id="updateTable" layoutX="103.0" layoutY="165.0" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+            <RadioButton fx:id="YesButton" layoutX="822.0" layoutY="165.0" mnemonicParsing="false" text="Yes" />
+            <RadioButton fx:id="NoButton" layoutX="749.0" layoutY="165.0" mnemonicParsing="false" text="No" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
