@@ -1,0 +1,223 @@
+1
+
+@startuml
+actor CommunityOrganizer as CO
+participant "BloodFlo Pro System" as BFS
+
+CO -> BFS: Log into system
+activate BFS
+CO -> BFS: Create New Blood Drive Event
+BFS -> CO: Takes event details
+CO -> BFS: Enter event details
+BFS -> CO: Validates event details
+alt Validation results are as expected
+    CO -> BFS: Create blood drive event
+    BFS -> CO: Blood drive event created
+else Validation results are not as expected
+    BFS -> CO: Prompt for correct information
+end
+@enduml
+
+Community organizer logs into the system.
+
+@startuml
+actor CommunityOrganizer as CO
+participant "UserInterface" as UI
+participant "EventService" as ES
+participant "Database" as DB
+
+CO -> UI: Select to create new blood drive event
+activate UI
+UI -> ES: Initiate event creation
+activate ES
+ES -> DB: Fetch available dates for event
+activate DB
+DB --> ES: Return available dates
+deactivate DB
+ES --> UI: Provide event creation interface with available dates
+deactivate ES
+UI --> CO: Display event creation interface with available dates
+deactivate UI
+note right of UI
+The UserInterface is using the Controller GRASP pattern.
+The Controller pattern assigns the responsibility of dealing with system events to a non-UI class that represents the overall system or a use case scenario.
+In this case, UserInterface acts as the controller that handles the system event of creating a new blood drive event.
+end note
+@enduml
+
+
+
+Community organizer selects to create a new blood drive event.
+
+@startuml
+actor CommunityOrganizer as CO
+participant "UserInterface" as UI
+participant "EventService" as ES
+participant "Database" as DB
+
+CO -> UI: Select to create new blood drive event
+activate UI
+UI -> ES: Initiate event creation
+activate ES
+ES -> DB: Fetch available dates for event
+activate DB
+DB --> ES: Return available dates
+deactivate DB
+ES --> UI: Provide event creation interface with available dates
+deactivate ES
+UI --> CO: Display event creation interface with available dates
+deactivate UI
+note right of UI
+The UserInterface is using the Controller GRASP pattern.
+The Controller pattern assigns the responsibility of dealing with system events to a non-UI class that represents the overall system or a use case scenario.
+In this case, UserInterface acts as the controller that handles the system event of creating a new blood drive event.
+end note
+@enduml
+
+
+
+System takes event details from the community organizer.
+Community organizer enters event details.
+
+@startuml
+actor CommunityOrganizer as CO
+participant "UserInterface" as UI
+participant "EventService" as ES
+participant "Database" as DB
+
+CO -> UI: Enter event details
+activate UI
+UI -> ES: Send entered details
+activate ES
+ES -> DB: Store entered details
+activate DB
+DB --> ES: Confirm storage of entered details
+deactivate DB
+ES --> UI: Acknowledge receipt of entered details
+deactivate ES
+UI --> CO: Confirm receipt of entered details
+deactivate UI
+note right of ES
+The EventService is using the Information Expert GRASP pattern.
+The Information Expert pattern assigns the responsibility to the class with the most information required to fulfill it.
+In this case, EventService has the information about how to handle entered event details, so it is responsible for this task.
+end note
+@enduml
+
+
+
+System validates event details.
+If validation results are as expected, the system creates the blood drive event.
+
+
+If validation results are not as expected, the system prompts for correct information.
+Blood drive event created by the system is communicated back to the community organizer.
+
+
+2
+
+@startuml
+actor EmergencyResponseCoordinator as ERC
+participant "BloodFlo Pro System" as BFS
+
+ERC -> BFS: Log into system
+activate BFS
+ERC -> BFS: Send Emergency Alerts
+BFS -> ERC: Takes alert details
+ERC -> BFS: Enter alert details
+BFS -> ERC: Validates alert details
+alt Validation is successful
+    ERC -> BFS: Send emergency alerts
+    BFS -> ERC: Notify donors in registered area
+    BFS -> ERC: Send notifications
+else Validation is not successful
+    BFS -> ERC: Prompt for correct information
+end
+@enduml
+
+
+Emergency response coordinator logs into the system.
+Emergency response coordinator selects to send emergency alerts.
+System takes alert details from the emergency response coordinator.
+Emergency response coordinator enters alert details.
+System validates alert details.
+If validation results are successful, the system sends emergency alerts.
+If validation results are not successful, the system prompts for correct information.
+System notifies donors in the registered area and sends notifications.
+
+3
+
+@startuml
+actor BloodBankTechnician as Tech
+participant "BloodFlo Pro System" as BFS
+
+Tech -> BFS: Log into system
+activate BFS
+Tech -> BFS: Separate Blood Components
+BFS -> Tech: Displays available blood units
+Tech -> BFS: Choose a blood unit
+BFS -> Tech: Prompts for component selection
+Tech -> BFS: Choose required components
+BFS -> Tech: Separates blood components
+Tech -> BFS: Confirm separation results
+BFS -> Tech: Updates inventory with separated components
+@enduml
+
+Blood bank technician logs into the system.
+Blood bank technician selects to separate blood components.
+System displays available blood units to the technician.
+Technician chooses a blood unit.
+System prompts for component selection.
+Technician chooses required components.
+System updates inventory with separated components.
+
+4
+
+@startuml
+actor Donor as D
+participant "BloodFlo Pro System" as BFS
+
+D -> BFS: Log into system
+activate BFS
+D -> BFS: Navigate to loyalty program section
+BFS -> D: Displays information about loyalty program
+D -> BFS: Selects "Enroll in Loyalty program"
+BFS -> D: Checks eligibility of the donor
+alt Eligible
+    BFS -> D: Registers donor in loyalty program
+    BFS -> D: Sends confirmation messages and reward details
+else Not eligible
+    BFS -> D: Sends notification and suggests ways to become eligible
+end
+@enduml
+
+Donor logs into the system.
+Donor navigates to the loyalty program section.
+System displays information about the loyalty program to the donor.
+Donor selects to enroll in the loyalty program.
+System checks the eligibility of the donor.
+If eligible, the system registers the donor in the loyalty program and sends confirmation messages and reward details.
+If not eligible, the system sends a notification to the donor and suggests ways to become eligible.
+
+5
+
+@startuml
+actor Donor as D
+participant "BloodFlo Pro System" as BFS
+
+D -> BFS: Selects "Feedback" option
+activate BFS
+BFS -> D: Displays options regarding feedback
+D -> BFS: Chooses desired option
+BFS -> D: Displays specified form for feedback
+D -> BFS: Enters feedback details
+BFS -> D: Records feedback
+BFS -> D: Sends confirmation message
+@enduml
+
+Donor selects the "Feedback" option.
+System displays options regarding feedback to the donor.
+Donor chooses the desired option.
+System displays the specified form for feedback to the donor.
+Donor enters feedback details.
+System records feedback and sends a confirmation message to the donor.
